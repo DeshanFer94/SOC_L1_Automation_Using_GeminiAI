@@ -56,6 +56,87 @@ The default path is D:\User\AIProject\Detection.json (update in the script if ne
 - Sends summarized data to Gemini AI in chunks if needed.
 - Outputs a detailed analysis to the console.
 
+## Configuration
+
+Default JSON Path: Modify DEFAULT_FILE_PATH in the script to change the default JSON file location:
+
+>DEFAULT_FILE_PATH = r"path\to\your\detection.json"
+
+Gemini Model: Defaults to gemini-1.5-flash. To use another model (e.g., gemini-1.5-pro):
+
+>model = genai.GenerativeModel('gemini-1.5-pro')
+
+Chunk Size: Adjust CHUNK_SIZE (default: 100,000 characters) for Gemini API requests:
+
+>CHUNK_SIZE = 100000
+
+API Key: Ensure GOOGLE_API_KEY is set securely via environment variables.
+
+## Example Output
+
+Below is a sample output for one detection from Detection.json
+
+>Security Operation Center L1 Analysis Automation Script
+Default file path: D:\Deshan Fernando\AI_Project\Detection-2.json
+Press Enter to use the default file, enter a different file path, or type 'exit' to quit:
+>
+Loading file: D:\Deshan Fernando\AI_Project\Detection-2.json
+Summarizing detection data...
+Sending data to Gemini AI for analysis...
+
+Gemini AI Analysis:
+--------------------------------------------------------------------------------
+## Detection 1 Analysis
+
+**Executive Summary**:
+A suspicious macro in an Office document was detected on FEN-ICT-DESHAN and flagged as potential malware. No preventative action was taken.
+
+**Event Details**:
+- Severity: High
+- Detection Name: CloudDetect-OnWriteMacroKestrelXMLHigh
+- Tactic: Machine Learning
+- Technique: Cloud-based ML
+- Timestamp: 2025-06-13T07:26:42Z
+
+**Involved Entities**:
+- Device:
+  - Hostname: FEN-ICT-DESHAN
+  - Device ID: 60b898a9af1b43b0a46700a1396f320d
+  - OS Version: Windows 11
+  - Local IP: 172.20.1.1
+  - External IP: 112.134.174.215
+- Suspect File/Process:
+  - Filename: WINWORD.EXE
+  - Filepath: \Device\HarddiskVolume3\Program Files\Microsoft Office\root\Office16\WINWORD.EXE
+  - SHA256: 939d96d5548464e996b6d3a9b558a6f646d0f2dd5538935039b0a2271ce9a543
+  - CMDline: "C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE" /n /f "D:\Users\deshan.fernando\Desktop\Doc1.dot"
+  - User: deshan.fernando
+- Parent Process:
+  - Filename: explorer.exe
+  - CMDline: C:\WINDOWS\Explorer.EXE
+  - User: Unknown
+- Grandparent Process:
+  - Filename: userinit.exe
+  - CMDline: C:\Windows\system32\userinit.exe
+  - User: Unknown
+
+**Analysis**:
+WINWORD.EXE wrote a macro to `Doc1.dot`, flagged by ML as malicious. This could indicate a malware attempt to persist or execute code. If unmitigated, it might have led to data theft or system compromise.
+
+**Remediation Actions Taken**:
+- Process Blocked: No
+- Quarantine File: No
+
+**Recommendations**:
+- Investigate `Doc1.dot` for malicious macros.
+- Educate user `deshan.fernando` on safe document handling.
+- Monitor FEN-ICT-DESHAN for further macro activity.
+
+## Detection 2 Analysis
+...
+## Detection 10 Analysis
+...
+--------------------------------------------------------------------------------
 
 
 
