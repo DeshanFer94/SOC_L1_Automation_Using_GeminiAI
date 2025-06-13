@@ -76,16 +76,15 @@ API Key: Ensure GOOGLE_API_KEY is set securely via environment variables.
 
 Below is a sample output for one detection from Detection.json
 
->Security Operation Center L1 Analysis Automation Script
-Default file path: D:\Deshan Fernando\AI_Project\Detection-2.json
+>'Security Operation Center L1 Analysis Automation Script
+Default file path: D:\User\Detection.json
 Press Enter to use the default file, enter a different file path, or type 'exit' to quit:
->
-Loading file: D:\Deshan Fernando\AI_Project\Detection-2.json
+Loading file: D:\User\Detection.json
 Summarizing detection data...
 Sending data to Gemini AI for analysis...
 
 Gemini AI Analysis:
---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------'
 ## Detection 1 Analysis
 
 **Executive Summary**:
@@ -130,13 +129,7 @@ WINWORD.EXE wrote a macro to `Doc1.dot`, flagged by ML as malicious. This could 
 **Recommendations**:
 - Investigate `Doc1.dot` for malicious macros.
 - Educate user `deshan.fernando` on safe document handling.
-- Monitor FEN-ICT-DESHAN for further macro activity.
-
-## Detection 2 Analysis
-...
-## Detection 10 Analysis
-...
---------------------------------------------------------------------------------
+- Monitor FEN-ICT-DESHAN for further macro activity.'
 
 
 
