@@ -82,55 +82,76 @@ Press Enter to use the default file, enter a different file path, or type 'exit'
 Loading file: D:\User\Detection.json
 Summarizing detection data...
 Sending data to Gemini AI for analysis...
-
-Gemini AI Analysis:
+>
+>Gemini AI Analysis:
 --------------------------------------------------------------------------------'
-## Detection 1 Analysis
+>
+>## Detection 1 Analysis
+>
+>**Executive Summary**
+>A suspicious macro in an Office document was detected on XX-XX-XX and flagged as potential malware. No preventative action was taken.
+>
+>**Event Details**:
+>- Severity: High
+>- Detection Name: CloudDetect-OnWriteMacroKestrelXMLHigh
+> - Tactic: Machine Learning
+> - Technique: Cloud-based ML
+> - Timestamp: 2025-06-13T07:26:42Z
+> -
+> - **Involved Entities**:
+> - Device:
+> - Hostname: XX-XX-XX
+> - Device ID: 60b898a9af1b43b0a46700a1396f320d
+> - OS Version: Windows 11
+> - Local IP: 172.20.1.1
+> - External IP: xx.xx.xx.xx
+> - Suspect File/Process:
+> - Filename: WINWORD.EXE
+> - Filepath: \Device\HarddiskVolume3\Program Files\Microsoft Office\root\Office16\WINWORD.EXE
+> - SHA256: 939d96d5548464e996b6d3a9b558a6f646d0f2dd5538935039b0a2271ce9a543
+> - CMDline: "C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE" /n /f "D:\Users\Desktop\Doc1.dot"
+> - User: userxxx
+> - Parent Process:
+> - Filename: explorer.exe
+> - CMDline: C:\WINDOWS\Explorer.EXE
+> - User: Unknown
+> - Grandparent Process:
+> - Filename: userinit.exe
+> - CMDline: C:\Windows\system32\userinit.exe
+> - User: Unknown
+> -
+> - **Analysis**:
+> - WINWORD.EXE wrote a macro to `Doc1.dot`, flagged by ML as malicious. This could indicate a malware attempt to persist or execute code. If unmitigated, it might have led to data theft or system compromise.
+> -
+> - **Remediation Actions Taken**:
+> - Process Blocked: No
+> - Quarantine File: No
+> -
+> - **Recommendations**
+>   - Investigate `Doc1.dot` for malicious macros.
+>   - Educate user `` on safe document handling.
+>   - Monitor XX-XX-XX for further macro activity.'
 
-**Executive Summary**:
-A suspicious macro in an Office document was detected on FEN-ICT-DESHAN and flagged as potential malware. No preventative action was taken.
+## Troubleshooting
 
-**Event Details**:
-- Severity: High
-- Detection Name: CloudDetect-OnWriteMacroKestrelXMLHigh
-- Tactic: Machine Learning
-- Technique: Cloud-based ML
-- Timestamp: 2025-06-13T07:26:42Z
+File Not Found:
+Ensure the JSON file exists at the specified path.
+Update DEFAULT_FILE_PATH if needed.
 
-**Involved Entities**:
-- Device:
-  - Hostname: FEN-ICT-DESHAN
-  - Device ID: 60b898a9af1b43b0a46700a1396f320d
-  - OS Version: Windows 11
-  - Local IP: 172.20.1.1
-  - External IP: 112.134.174.215
-- Suspect File/Process:
-  - Filename: WINWORD.EXE
-  - Filepath: \Device\HarddiskVolume3\Program Files\Microsoft Office\root\Office16\WINWORD.EXE
-  - SHA256: 939d96d5548464e996b6d3a9b558a6f646d0f2dd5538935039b0a2271ce9a543
-  - CMDline: "C:\Program Files\Microsoft Office\Root\Office16\WINWORD.EXE" /n /f "D:\Users\deshan.fernando\Desktop\Doc1.dot"
-  - User: deshan.fernando
-- Parent Process:
-  - Filename: explorer.exe
-  - CMDline: C:\WINDOWS\Explorer.EXE
-  - User: Unknown
-- Grandparent Process:
-  - Filename: userinit.exe
-  - CMDline: C:\Windows\system32\userinit.exe
-  - User: Unknown
+Invalid JSON:
+Validate the JSON file using a tool like jq or an online JSON validator.
+Fix syntax errors (e.g., missing commas, brackets).
 
-**Analysis**:
-WINWORD.EXE wrote a macro to `Doc1.dot`, flagged by ML as malicious. This could indicate a malware attempt to persist or execute code. If unmitigated, it might have led to data theft or system compromise.
+API Key Error:
+Verify GOOGLE_API_KEY is set correctly.
+Check Gemini API quota and permissions in Google Cloud Console.
 
-**Remediation Actions Taken**:
-- Process Blocked: No
-- Quarantine File: No
+Too Few Detections:
+Confirm the JSON file contains the expected number of detections.
+Check for errors in the console output.
 
-**Recommendations**:
-- Investigate `Doc1.dot` for malicious macros.
-- Educate user `deshan.fernando` on safe document handling.
-- Monitor FEN-ICT-DESHAN for further macro activity.'
-
-
+Gemini API Errors:
+Ensure stable internet connectivity.
+Verify the Gemini model (gemini-1.5-flash) is accessible in your region.
 
 
