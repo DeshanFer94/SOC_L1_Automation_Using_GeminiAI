@@ -1,4 +1,4 @@
-# SOC_L1_Automation_Using_GeminiAI
+# Enhancing L1 SOC analysis with GeminiAI
 
 This repository contains a Python script that automates the analysis of EEDR/SIEM data in JSON format for Security Operation Center (SOC) Level 1 analysts. The script extracts key details from EDR detections, summarizes them, and leverages Google Gemini AI to provide structured insights, including executive summaries, event details, analysis, remediation actions, and recommendations.
 
