@@ -28,3 +28,35 @@ Clone the Repository:
 >git clone https://github.com/your-username/soc-l1-analysis-automation.git
 
 >cd soc-l1-analysis-automation
+
+## Install Dependencies
+
+>pip install google-generativeai
+
+## Configure the Gemini API Key
+
+Set the GOOGLE_API_KEY environment variable:
+>export GOOGLE_API_KEY='your-api-key-here'  # On Windows: set GOOGLE_API_KEY=your-api-key-here
+
+## Prepare EDR JSON File
+
+Place your EDR JSON file (e.g., Detection.json) in the project directory or specify its path.
+The default path is D:\User\AIProject\Detection.json (update in the script if needed).
+
+## Usage
+
+### Run the Script
+
+>python edr_json_gemini_analysis.py
+
+### Script Workflow
+
+- Loads and validates the JSON file.
+- Summarizes all detections (device, event, process, IOCs, network accesses).
+- Sends summarized data to Gemini AI in chunks if needed.
+- Outputs a detailed analysis to the console.
+
+
+
+
+
