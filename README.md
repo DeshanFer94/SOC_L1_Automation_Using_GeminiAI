@@ -135,23 +135,23 @@ Sending data to Gemini AI for analysis...
 ## Troubleshooting
 
 File Not Found:
-Ensure the JSON file exists at the specified path.
-Update DEFAULT_FILE_PATH if needed.
+- Ensure the JSON file exists at the specified path.
+- Update DEFAULT_FILE_PATH if needed.
 
 Invalid JSON:
-Validate the JSON file using a tool like jq or an online JSON validator.
-Fix syntax errors (e.g., missing commas, brackets).
+- Validate the JSON file using a tool like jq or an online JSON validator.
+- Fix syntax errors (e.g., missing commas, brackets).
 
 API Key Error:
-Verify GOOGLE_API_KEY is set correctly.
-Check Gemini API quota and permissions in Google Cloud Console.
+- Verify GOOGLE_API_KEY is set correctly.
+- Check Gemini API quota and permissions in Google Cloud Console.
 
 Too Few Detections:
-Confirm the JSON file contains the expected number of detections.
-Check for errors in the console output.
+- Confirm the JSON file contains the expected number of detections.
+- Check for errors in the console output.
 
 Gemini API Errors:
-Ensure stable internet connectivity.
-Verify the Gemini model (gemini-1.5-flash) is accessible in your region.
+- Ensure stable internet connectivity.
+- Verify the Gemini model (gemini-1.5-flash) is accessible in your region.
 
 
